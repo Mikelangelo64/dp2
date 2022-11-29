@@ -1,0 +1,281 @@
+@import './colors.scss';
+@import './settings';
+@import './viewport';
+@import './heading';
+@import './font-size.scss';
+
+*{
+    -webkit-tap-highlight-color: transparent;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+input,
+textarea,
+button,
+select {
+  font-family: $font-family;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    overflow-x: hidden;
+    height: unset !important;
+
+    -webkit-overflow-scrolling: auto !important;
+    /* width */
+    &::-webkit-scrollbar {
+        width: px-to-rem(8);
+    }
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background-color: transparent; 
+        border: 1px solid var(--color-text-primary);
+        //border-radius: px-to-rem(10);
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--color-text-primary); 
+        //border-radius: px-to-rem(10);
+    }
+
+    font-weight: 400;
+    font-size: px-to-rem(16);
+    line-height: 120%;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+
+    &._lock, &._lock__pop{
+        overflow: hidden;
+    }
+}
+
+@mixin section-light {
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+}
+
+@mixin section-grey {
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-second);
+}
+
+@mixin section-dark {
+    color: var(--color-text-secondary);
+    background-color: var(--color-bg-fourth);
+}
+
+@mixin text-body-1 {
+    line-height: 120%;
+
+    @include viewport-tablet-min {
+        font-size: px-to-rem(16);
+    }
+
+    @include viewport-phone {
+        font-size: px-to-rem(14);
+    }
+}
+
+@mixin text-body-2 {
+    line-height: 115%;
+
+    @include viewport-desktop {
+        font-size: px-to-rem(20);
+    }
+
+    @include viewport-tablet {
+        font-size: px-to-rem(17);
+    }
+
+    @include viewport-phone {
+        font-size: px-to-rem(14);
+    }
+}
+
+@mixin text-body-3 {
+    line-height: 115%;
+
+    @include viewport-desktop {
+        font-size: px-to-rem(36);
+    }
+
+    @include viewport-tablet {
+        font-size: px-to-rem(36);
+    }
+
+    @include viewport-phone {
+        font-size: px-to-rem(36);
+    }
+}
+
+@mixin button { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: unset;
+    background-color: transparent;
+    transition: background 0.3s ease, color 0.3s ease;
+
+    &._light {
+        background-color: var(--color-element-secondary);
+        color: var(--color-text-primary);
+
+        &:hover,
+        &:focus-visible {
+            background-color: var(--color-element-primary);
+            color: var(--color-text-secondary);
+        }
+    }
+
+    &._hollow {
+        border: 1px solid var(--color-text-secondary);
+        color: var(--color-text-secondary);
+
+        &:hover,
+        &:focus-visible {
+            background-color: var(--color-text-secondary);
+            color: var(--color-text-primary);
+        }
+    }
+
+    &._colored {
+        background-color: var(--color-element-primary);
+        color: var(--color-text-secondary);
+
+        &:hover,
+        &:focus-visible {
+            background-color: var(--color-element-fourthy);
+            color: var(--color-text-secondary);
+        }
+    }
+}
+
+@mixin button-small {
+    @include button;
+    max-width: px-to-rem(178);
+    width: 100%;
+    padding: px-to-rem(6) px-to-rem(20);
+    font-size: px-to-rem(16);
+    line-height: px-to-rem(36);
+    font-weight: 400;
+}
+
+@mixin button-medium {
+    @include button;
+    max-width: px-to-rem(225);
+    width: 100%;
+    padding: px-to-rem(5) px-to-rem(20);
+    font-size: px-to-rem(16);
+    line-height: px-to-rem(36);
+    font-weight: 400;
+}
+
+@mixin button-large {
+    @include button;
+    width: 100%;
+    height: px-to-rem(65);
+    padding: px-to-rem(17) px-to-rem(20);
+    font-size: px-to-rem(24);
+    line-height: 116%;
+    font-weight: 500;
+
+    @include viewport-desktop {
+        max-width: px-to-rem(364);
+    }
+
+    @include viewport-tablet {
+        max-width: px-to-rem(330);
+    }
+
+    @include viewport-phone {
+        max-width: px-to-rem(295);
+    }
+}
+
+@mixin form-input {
+    width: 100%;
+    border: unset;
+    border-radius: unset;
+    border-bottom: 1px solid var(--color-text-secondary);
+    font-weight: 400;
+    color: inherit;
+    background-color: transparent;
+    padding: unset;
+    padding-bottom: 4px;
+
+    @include viewport-desktop {
+        font-size: px-to-rem(18);
+    }
+
+    @include viewport-tablet {
+        font-size: px-to-rem(16);
+    }
+
+    @include viewport-phone {
+        font-size: px-to-rem(14);
+    }
+
+    &::placeholder {
+        font-weight: 400;
+        color: inherit;
+
+        @include viewport-desktop {
+            font-size: px-to-rem(18);
+        }
+
+        @include viewport-tablet {
+            font-size: px-to-rem(16);
+        }
+
+        @include viewport-phone {
+            font-size: px-to-rem(14);
+        }
+    }
+}
+
+._container {
+    width: 100%;
+    margin: 0 auto;
+
+    @include viewport-desktop {
+        max-width: px-to-rem(1345);
+
+        @media (max-width: 1440px) {
+            max-width: 93.142%;
+        }
+    }
+    @include viewport-tablet {
+        max-width: 93.142%;
+    }
+    @include viewport-phone {
+        max-width: 93.142%;
+    }
+}
+
+.custom-logo-link {
+    position: relative;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+
+    @include viewport-tablet-min {
+        max-width: px-to-rem(166);
+    }
+    @include viewport-phone {
+        max-width: px-to-rem(244);
+    }
+
+    svg, img{
+        width: 100%;
+        height: auto;
+    }
+}

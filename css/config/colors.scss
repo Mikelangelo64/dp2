@@ -1,0 +1,30 @@
+$colors: (
+    'text-primary': #000,
+    'text-secondary': #ffffff,
+    'bg-primary': #fff9ef,
+    'bg-second': #d9d9d9,
+    'bg-third': #000,
+    'bg-fourth': #0E0F19,
+    'element-primary': #088342,
+    'element-secondary': #ffffff,
+    'element-thirdy': #3c3c3c,
+    'element-fourthy': #1362a9,
+    'element-fifth': #daeae2,
+    'element-error': #fb2740,
+);
+
+@function hex-to-rgb ($hex) {
+    @return red($hex), green($hex), blue($hex);
+}
+
+:root {
+    @each $key, $value in $colors {
+        --color-#{$key}--rgb: #{hex-to-rgb($value)};
+        --color-#{$key}: #{$value};
+    }
+}
+
+html {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+}
