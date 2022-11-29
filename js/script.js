@@ -33,4 +33,19 @@ $(document).ready(function(){
     }else{
         $('body').addClass('_pc')
     }
+
+    //swipers
+    let swiperDonats = null
+
+    $('.donat-slider.swiper').each(function(index) {
+        swiperDonats = new Swiper(`._donat-${index}.donat-slider.swiper`, {
+            pagination: {
+                el: `._donat-${index}.donat-slider .donat-slider__pagination__container`,
+                clickable: true,
+            },
+            slidesPerView: 1,
+            spaceBetween: 24,
+
+        })
+    })
 })

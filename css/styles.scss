@@ -1062,4 +1062,354 @@ form {
 }
 
 //DONAT----------------------------------------------------------------------
+.donat {
+    
+    //.donat__wrapper 
+    &__wrapper {
+        > * + * {
+            @include viewport-tablet-min {
+                margin-top: px-to-rem(21);
+            }
 
+            @include viewport-phone {
+                margin-top: px-to-rem(25);
+            }
+        }
+    }
+    
+    //.donat__row 
+    &__row {
+        width: 100%;
+
+        @include viewport-tablet-min {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &:nth-child(1) {
+            > * + * {
+                @include viewport-phone {
+                    margin-top: px-to-rem(27);
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            > * + * {
+                @include viewport-phone {
+                    margin-top: px-to-rem(41);
+                }
+            }
+        }
+
+        > * + * {
+            @include viewport-desktop {
+                margin-left: 3.717%;
+            }
+            @include viewport-tablet {
+                margin-left: 3.717%;
+            }
+        }
+    }
+    
+    //.donat__column 
+    &__column {
+        &:nth-child(1) {
+            @include viewport-tablet-min {
+                width: 50.706%
+            }
+        }
+
+        &:nth-child(2) {
+            @include viewport-tablet-min {
+                width: 45.427%
+            }
+        }
+    }
+    
+    //.donat-slider__container 
+    &-slider__container {
+        @include viewport-tablet-min {
+            width: calc(100% - px-to-rem(24));
+            margin-right: px-to-rem(24);
+        }
+
+        @include viewport-phone {
+            @include viewport-phone {
+                margin-left: calc(3.5% * -1);
+                width: calc(100% + 3.5% * 2);
+            }
+        }
+    }
+    
+    //.donat-slider 
+    &-slider {
+        &.swiper {
+        }
+        .swiper-wrapper {
+        }
+        .swiper-slide {
+        }
+    
+        
+        //.donat-slider__pagination__container 
+        &__pagination__container {
+            position: static;
+            display: flex;
+            justify-content: center;
+
+            @include viewport-tablet-min {
+                margin-top: px-to-rem(17);
+                column-gap: px-to-rem(4.86);
+            }
+
+            @include viewport-phone {
+                margin-top: px-to-rem(20);
+                column-gap: px-to-rem(4.25);
+            }
+
+            &.swiper-pagination-bullets .swiper-pagination-bullet {
+                margin: 0;
+                border-radius: unset;
+                border: 1px solid transparent;
+                background-color: var(--color-text-primary);
+                opacity: unset;
+                transition: background 0.3s ease, bprder 0.3s ease;
+
+                @include viewport-tablet-min {
+                    width: px-to-rem(11.54);
+                    height: px-to-rem(11.54);
+                }
+
+                @include viewport-phone {
+                    width: px-to-rem(10.16);
+                    height: px-to-rem(10.16);
+                }
+
+                &.swiper-pagination-bullet-active {
+                    border-color: var(--color-text-primary);
+                    background-color: transparent;
+                }
+            }
+        }
+        
+        //.donat-slider__img 
+        &__img {
+            position: relative;
+            width: 100%;
+
+            //.donat-slider__img__container 
+            &__container {
+                @include viewport-tablet-min {
+                    padding-top: 59.056%;
+                }
+
+                @include viewport-phone {
+                    padding-top: 61.428%;
+                }
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover
+            }
+        }
+    }
+    
+    //.donat-info 
+    &-info {
+        
+        //.donat-info__wrapper 
+        &__wrapper {
+            position: relative;
+        }
+        
+        //.donat-info__title__container 
+        &__title__container {
+            @include viewport-tablet-min {
+                margin-bottom: px-to-rem(46);
+            }
+
+            @include viewport-phone {
+                margin-bottom: px-to-rem(13);
+            }
+        }
+        
+        //.donat-info__title 
+        &__title {
+            @include text-heading-3;
+        }
+        
+        //.donat-info__description 
+        &__description {
+            position: relative;
+            z-index: 1;
+            font-weight: 400;
+            font-size: px-to-rem(20);
+            line-height: 115%;
+            color: var(--color-text-primary); 
+            
+            @include viewport-tablet-min {
+                font-size: px-to-rem(20);
+                line-height: 115%;
+            }
+
+            @include viewport-phone {
+                font-size: px-to-rem(14);
+                line-height: 114.2%;
+            }
+            
+            > * + * {
+                @include viewport-tablet-min {
+                    margin-top: px-to-rem(20);
+                }
+
+                @include viewport-phone {
+                    margin-top: px-to-rem(10);
+                }
+            }
+        }
+        
+        //.donat-info__label 
+        &__label {
+            position: absolute;
+            bottom: 0;
+            z-index: 0;
+            width: px-to-rem(333);
+
+            @include viewport-tablet-min {
+                right: 0;
+                transform: translate(px-to-rem(-13), 60.512%);
+            }
+
+            @include viewport-phone {
+                left: 50%;
+                transform: translate(-50%, 68.205%);
+            }
+
+            img, svg {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+    }
+    
+    //.donat-status 
+    &-status {
+        
+        //.donat-status__wrapper 
+        &__wrapper {
+        }
+        
+        //.donat-status__info 
+        &__info {
+        }
+        
+        //.donat-status__title 
+        &__title {
+        }
+        
+        //.donat-status__value 
+        &__value {
+        }
+        
+        //.donat-status-bar 
+        &-bar {
+            
+            //.donat-status-bar__wrapper 
+            &__wrapper {
+            }
+            
+            //.donat-status-bar__inner 
+            &__inner {
+            }
+        }
+    }
+    
+    //.donat-action 
+    &-action {
+        
+        //.donat-action__wrapper 
+        &__wrapper {
+        }
+        
+        //.donat-action__link__container 
+        &__link__container {
+        }
+        
+        //.donat-action__btn 
+        &__btn {
+        }
+        
+        //.donat-action__link 
+        &__link {
+        }
+    }
+}
+
+//NEEDS----------------------------------------------------------------------
+.needs {
+    @include section-light;
+    overflow: hidden;
+
+    @include viewport-tablet-min {
+        padding: px-to-rem(28) 0 px-to-rem(64);
+    }
+
+    @include viewport-phone {
+        padding: px-to-rem(31) 0 px-to-rem(27);
+    }
+
+    //.needs__container 
+    &__container {
+    }
+    
+    //.needs__wrapper 
+    &__wrapper {
+    }
+    
+    //.needs__header 
+    &__header {
+        @include viewport-desktop {
+            margin-bottom: px-to-rem(57);
+        }
+
+        @include viewport-tablet {
+            margin-bottom: px-to-rem(36);
+        }
+
+        @include viewport-phone {
+            margin-bottom: px-to-rem(15);
+        }
+    }
+    
+    //.needs__title__container 
+    &__title__container {
+        .title-container__label {
+        }
+    }
+    
+    //.needs__title 
+    &__title {
+    }
+    
+    //.needs-list 
+    &-list {
+        > * + * {
+            @include viewport-tablet-min {
+                border-top: 5px solid var(--color-bg-second);
+                margin-top: px-to-rem(23);
+                padding-top: px-to-rem(39);
+            }
+        }
+
+        //.needs-list__item 
+        &__item {
+        }
+    }
+}
