@@ -1865,6 +1865,201 @@ form {
     }
 }
 
+//SPONSORS-------------------------------------------------------------------
+.sponsors {
+    @include section-light;
+
+    @include viewport-desktop {
+        padding: px-to-rem(62) 0 px-to-rem(130);
+    }
+    
+    @include viewport-tablet {
+        padding: px-to-rem(50) 0 px-to-rem(80);
+    }
+    
+    @include viewport-phone {
+        padding: px-to-rem(37) 0 px-to-rem(30);
+    }
+
+    //.sponsors__wrapper 
+    &__wrapper {
+    }
+    
+    //.sponsors__header 
+    &__header {
+        @include viewport-tablet-min {
+            margin-bottom: px-to-rem(83);
+        }
+
+        @include viewport-phone {
+            margin-bottom: px-to-rem(25);
+        }
+    }
+    
+    //.sponsors__title__container 
+    &__title__container {
+        .title-container__label {
+        }
+    }
+    
+    //.sponsors__title 
+    &__title {
+    }
+    
+    //.sponsors__slider__container 
+    &__slider__container {
+        position: relative;
+    }
+
+    //.sponsors__slider__navigation__container {
+    &__slider__navigation__container {
+        .swiper-button-next,
+        .swiper-button-prev {
+            right: unset;
+            left: unset;
+            width: px-to-rem(22);
+            border: unset;
+            margin: unset;
+            padding: unset;
+            background-color: unset;
+            transform: translate(0, -50%);
+            transition: opacity 0.3s ease;
+
+            &::after {
+                display: none;
+            }
+
+            svg {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .swiper-button-next {
+            right: 0;
+        }
+
+        .swiper-button-prev {
+            left: 0;
+        }
+    }
+    
+    //.sponsors-slider 
+    &-slider {
+        margin: 0 auto;
+
+        @include viewport-tablet-min {
+            max-width: 81.784%;
+        }
+
+        @include viewport-phone {
+            max-width: 70.333%;
+        }
+
+        &.swiper {
+            .swiper-wrapper {
+            }
+            .swiper-slide {
+            }
+        }
+        
+        //.sponsors-slider__img {
+        &__img {
+            width: 100%;
+            height: auto;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+//AWARDS---------------------------------------------------------------------
+.awards {
+    @include section-dark;
+
+    @include viewport-desktop {
+        padding: px-to-rem(165) 0 px-to-rem(83);
+    }
+    
+    @include viewport-tablet {
+        padding: px-to-rem(110) 0 px-to-rem(60);
+    }
+    
+    @include viewport-phone {
+        padding: px-to-rem(54) 0 px-to-rem(36);
+    }
+
+    //.awards__container 
+    &__container {
+    }
+    
+    //.awards__wrapper 
+    &__wrapper {
+    }
+    
+    //.awards__header 
+    &__header {
+        @include viewport-tablet-min {
+            margin-bottom: px-to-rem(35);
+        }
+
+        @include viewport-phone {
+            margin-bottom: px-to-rem(40);
+        }
+    }
+    
+    //.awards__title__container 
+    &__title__container {
+        .title-container__label {
+        }
+    }
+    
+    //.awards__title 
+    &__title {
+    }
+    
+    //.awards__slider__container 
+    &__slider__container {
+    }
+    
+    //.awards-slider 
+    &-slider {
+        &.swiper {
+            .swiper-wrapper {
+            }
+            .swiper-slide {
+            }
+        }
+        
+        
+        //.awards-slider__img 
+        &__img {
+            width: 100%;
+            height: auto;
+            background-color: var(--color-text-secondary);
+
+            @include viewport-desktop {
+                padding: px-to-rem(42) px-to-rem(33);
+            }
+
+            @include viewport-tablet {
+                padding: px-to-rem(30) px-to-rem(23);
+            }
+
+            @include viewport-phone {
+                padding: px-to-rem(17.7) px-to-rem(13);
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
 
 //FOOTER---------------------------------------------------------------------
 .footer {
