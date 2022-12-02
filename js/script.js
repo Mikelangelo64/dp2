@@ -74,10 +74,12 @@ $(document).ready(function(){
     let offset = 0
     const section = document.querySelector(`.reports .horizontal-list__wrapper`)
 
-    section.addEventListener('scroll', (e) => {
-        offset = $(section).children().offset().left
-        //console.log($(section).children().offset().left)
-    })
+    if (section) {
+        section.addEventListener('scroll', (e) => {
+            offset = $(section).children().offset().left
+            //console.log($(section).children().offset().left)
+        })
+    }
 
     //scroll to date
     function makeHorizontalScroll(section) {
@@ -145,6 +147,20 @@ $(document).ready(function(){
             title.innerHTML = 'Дякуємо за допомогу'
         }
     }
+
+    //report-inner video show
+    $('.report-inner-video__play').click(function() {
+        $(this).parent().parent().addClass('_play')
+        $(this).parent().children('.report-inner-video__video').children('video')[0].load()
+        $(this).parent().children('.report-inner-video__video').children('video')[0].play()
+    })
+
+    //project-inner video show
+    $('.project-inner-video__play').click(function() {
+        $(this).parent().parent().addClass('_play')
+        $(this).parent().children('.project-inner-video__video').children('video')[0].load()
+        $(this).parent().children('.project-inner-video__video').children('video')[0].play()
+    })
 
     //swipers
     let swiperDonats = null

@@ -279,3 +279,13 @@ body{
         height: auto;
     }
 }
+
+._inner {
+    @include viewport-tablet-min {
+        margin-top: px-to-rem(81);
+    }
+
+    @include viewport-phone {
+        margin-top: px-to-rem(72.6);
+    }
+}
